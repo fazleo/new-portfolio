@@ -1,0 +1,652 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #2c3e50;
+  --accent-color: #007bff;
+  --skill-icon-size: 6rem;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #f8f9fa;
+  --accent-color: #0d6efd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Segoe UI", sans-serif;
+}
+
+section {
+  min-height: 100vh;
+  padding: 100px 0;
+  scroll-snap-align: start;
+}
+
+/* Navigation */
+.navbar {
+  border-bottom: 3px solid var(--accent-color);
+  background-color: var(--bg-color) !important;
+}
+
+.nav-link {
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  transform: translateY(-2px);
+  color: var(--accent-color) !important;
+}
+
+/* Skills Section */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 3rem;
+  justify-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.skill-icon {
+  font-size: var(--skill-icon-size);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.skill-icon i {
+  margin-bottom: 1rem;
+}
+
+.skill-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* Projects Section */
+.project-card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: var(--bg-color);
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+  height: 300px;
+  background: #f0f0f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 2rem;
+}
+
+.project-tech {
+  display: flex;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.tech-icon {
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+.project-links {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
+/* Contact Section */
+.social-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+
+.social-icon {
+  font-size: 3rem;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px);
+  color: var(--accent-color);
+}
+
+/* Dark Mode Fixes */
+[data-theme="dark"] {
+  .project-image {
+    background: #2a2a2a;
+  }
+
+  .image-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
+  }
+}
+
+.devicon-python-plain,
+.devicon-pytorch-plain,
+.devicon-pandas-plain,
+.devicon-flask-original,
+.devicon-django-plain,
+.devicon-matplotlib-plain,
+.devicon-tensorflow-original,
+.devicon-git-plain {
+  color: inherit !important;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  width: 50px;
+  height: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    --skill-icon-size: 4.5rem;
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+  }
+
+  .skill-name {
+    font-size: 1rem;
+  }
+
+  .project-image {
+    height: 200px;
+  }
+
+  .social-icon {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  section {
+    padding: 80px 0;
+  }
+
+  .project-links {
+    flex-direction: column;
+  }
+}
+
+[data-theme="dark"] {
+  /* Skill icons color fix */
+  .skills-container i {
+    color: var(--text-color) !important;
+  }
+
+  /* Project card text fixes */
+  .project-card,
+  .project-content,
+  .project-tech,
+  .tech-icon {
+    color: var(--text-color) !important;
+  }
+
+  /* Project image overlay adjustment */
+  .image-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(255, 255, 255, 0.1) 100%
+    );
+  }
+
+  /* Text muted color fix */
+  .text-muted {
+    color: #9e9e9e !important;
+  }
+
+  /* Card border fix */
+  .project-card {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+  }
+
+  /* Button hover fixes */
+  .btn-outline-secondary {
+    border-color: var(--text-color);
+    color: var(--text-color);
+  }
+}
+
+/* Update existing styles */
+.tech-icon {
+  color: var(--text-color);
+}
+
+.project-content p {
+  color: var(--text-color);
+}
+
+.project-card {
+  border-color: rgba(0, 0, 0, 0.1);
+  background: var(--bg-color);
+}
+
+.devicon-python-plain,
+.devicon-pytorch-plain,
+.devicon-pandas-plain,
+.devicon-flask-original,
+.devicon-django-plain,
+.devicon-matplotlib-plain,
+.devicon-tensorflow-original,
+.devicon-git-plain {
+  color: var(--text-color) !important;
+}
+
+/* Add this for social icons */
+.social-icon {
+  color: var(--text-color) !important;
+}
+
+/* Add these specific fixes */
+.skill-icon i {
+  color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .skill-icon i {
+  color: var(--text-color) !important;
+}
+
+/* Force all devicon colors */
+.devicon-python-plain,
+.devicon-pytorch-plain,
+.devicon-pandas-plain,
+.devicon-flask-original,
+.devicon-django-plain,
+.devicon-matplotlib-plain,
+.devicon-tensorflow-original,
+.devicon-git-plain,
+.devicon-react-original,
+.devicon-nodejs-plain {
+  color: inherit !important;
+}
+
+/* Universal devicon override */
+i[class^="devicon-"] {
+  color: var(--text-color) !important;
+}
+
+/* Ensure parent container color */
+.skills-container {
+  color: var(--text-color) !important;
+}
+
+#about {
+  padding: 100px 0;
+  background-color: rgba(0, 0, 0, 0.02); /* Subtle background */
+}
+
+#about .container {
+  max-width: 1200px;
+}
+
+#about .row {
+  align-items: center; /* Vertical alignment */
+  min-height: 60vh; /* Minimum section height */
+}
+
+#about img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border: 5px solid var(--accent-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin: 0 auto; /* Center image */
+  display: block; /* Fix image alignment */
+  transition: transform 0.3s ease;
+}
+
+#about img:hover {
+  transform: scale(1.03); /* Hover effect */
+}
+
+#about .lead {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  padding-right: 2rem;
+  position: relative;
+}
+
+#about .lead::after {
+  content: "";
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  #about .row {
+    text-align: center; /* Center content on mobile */
+  }
+
+  #about img {
+    width: 250px;
+    height: 250px;
+    margin-top: 2rem;
+  }
+
+  #about .lead {
+    padding-right: 0;
+    font-size: 1.1rem;
+  }
+
+  #about .lead::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Navigation Bar Styling */
+.navbar {
+  background-color: var(--bg-color) !important;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.navbar-brand,
+.nav-link {
+  color: var(--text-color) !important;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent-color) !important;
+}
+
+/* Dark mode toggler icon color */
+.navbar-toggler {
+  filter: invert(1);
+}
+
+[data-theme="dark"] .navbar-toggler {
+  filter: invert(0);
+}
+
+#skills {
+  background-color: var(--bg-color);
+}
+
+.skills-container {
+  color: var(--text-color);
+}
+
+.skill-icon i {
+  color: var(--text-color) !important;
+}
+
+.skill-name {
+  color: var(--text-color) !important;
+}
+
+/* Specific icon overrides */
+.devicon-python-plain,
+.devicon-pytorch-plain,
+.devicon-pandas-plain,
+.devicon-flask-original,
+.devicon-django-plain,
+.devicon-matplotlib-plain,
+.devicon-tensorflow-original,
+.devicon-git-plain {
+  color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .skills-container {
+  background-color: var(--bg-color);
+}
+
+/* new things  */
+#home {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(248, 249, 250, 1) 0%,
+    rgba(233, 236, 239, 1) 100%
+  );
+}
+
+[data-theme="dark"] #home {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 26, 1) 0%,
+    rgba(45, 45, 45, 1) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Text Animation Styles */
+.animated-text {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.animated-text span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+/* Stats Card Styling */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 4rem 0;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  background: rgba(var(--accent-rgb), 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  min-width: 200px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--accent-color), transparent);
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.stat-item h3 {
+  font-size: 3.5rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.stat-item p {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Background Animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.floating-element {
+  position: absolute;
+  opacity: 0.1;
+  z-index: 1;
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-element:nth-child(1) {
+  top: 10%;
+  left: 5%;
+  font-size: 3rem;
+}
+.floating-element:nth-child(2) {
+  top: 30%;
+  right: 10%;
+  font-size: 4rem;
+}
+.floating-element:nth-child(3) {
+  bottom: 20%;
+  left: 15%;
+  font-size: 2.5rem;
+}
+
+/* publication */
+
+/* Publications Section */
+#publications {
+  background-color: var(--bg-color);
+  padding: 100px 0;
+}
+
+.publication-card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: var(--bg-color);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  color: var(--text-color); /* Ensure text color is set */
+}
+
+.publication-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.publication-content h3 {
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.publication-content p {
+  color: var(--text-color);
+  opacity: 0.9;
+  margin-bottom: 1.5rem; /* Add spacing below paragraphs */
+}
+
+.publication-links {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.publication-links .btn {
+  color: var(--text-color); /* Ensure button text is visible */
+}
+
+/* Dark Mode Fixes for Publications */
+[data-theme="dark"] .publication-card {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] .publication-content h3,
+[data-theme="dark"] .publication-content p {
+  color: var(--text-color);
+}

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FR - Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Devicon (Tech Icons) -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Theme Toggle -->
+    <button
+      class="btn btn-primary theme-toggle rounded-circle"
+      onclick="toggleTheme()"
+    >
+      <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">FR</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#publications">Publications</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="d-flex align-items-center">
+      <div class="container text-center">
+        <h1 class="display-1 fw-bold mb-3">FASLU RAHMAN</h1>
+        <h2 class="h3 text-muted mb-4">
+          Junior Research Fellow at NIT Calicut
+        </h2>
+        <p class="lead">AI Researcher | Software Security Specialist</p>
+        <div class="detail-card">
+          <div class="stats-container">
+            <div class="stat-item">
+              <h3>2</h3>
+              <p>Research Papers Published</p>
+            </div>
+            <div class="stat-item">
+              <h3>1</h3>
+              <p>Years of Experience</p>
+            </div>
+            <div class="stat-item">
+              <h3>10+</h3>
+              <p>Projects Completed</p>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <i class="fas fa-chevron-down fa-2x"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <h2 class="mb-5">About Me</h2>
+        <div class="row g-5">
+          <div class="col-md-6 justify-content-center">
+            <p class="lead">
+              Currently working as a Junior Research Fellow at NIT Calicut with
+              expertise in AI research and software security. Focused on
+              developing secure AI systems and publishing cutting-edge research.
+            </p>
+            <!-- Education Details -->
+            <div class="education-details mt-5">
+              <h4 class="mb-5">Education</h4>
+              <ul class="list-unstyled">
+                <li class="mb-3">
+                  <h5>Master of Technology (M.Tech) in Computer Science</h5>
+                  <p class="text-muted mb-0">
+                    National Institute of Technology Calicut
+                  </p>
+                  <small class="text-muted">2022 - Present</small>
+                </li>
+                <li class="mb-3">
+                  <h5>Bachelor of Technology (B.Tech) in Computer Science</h5>
+                  <p class="text-muted mb-0">University of Calicut</p>
+                  <small class="text-muted">2018 - 2022</small>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <img
+              src="faslu.jpg"
+              alt="Profile"
+              class="img-fluid rounded-circle"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="">
+      <div class="container">
+        <h2 class="mb-5 text-center">Technical Skills</h2>
+        <div class="skills-container">
+          <div class="skill-icon">
+            <i class="devicon-python-plain"></i>
+            <span class="skill-name">Python</span>
+          </div>
+          <div class="skill-icon">
+            <i class="devicon-pytorch-plain"></i>
+            <span class="skill-name">PyTorch</span>
+          </div>
+          <div class="skill-icon">
+            <i class="devicon-pandas-plain"></i>
+            <span class="skill-name">Pandas</span>
+          </div>
+          <div class="skill-icon">
+            <i class="devicon-flask-original"></i>
+            <span class="skill-name">Flask</span>
+          </div>
+          <div class="skill-icon">
+            <i class="devicon-django-plain"></i>
+            <span class="skill-name">Django</span>
+          </div>
+
+          <div class="skill-icon">
+            <i class="devicon-tensorflow-original"></i>
+            <span class="skill-name">TensorFlow</span>
+          </div>
+          <div class="skill-icon">
+            <i class="devicon-git-plain"></i>
+            <span class="skill-name">Git</span>
+          </div>
+          <div class="skill-icon">
+            <i class="devicon-vuejs-plain"></i>
+            <span class="skill-name">Vue Js</span>
+          </div>
+          <div class="skill-icon">
+            <i class="devicon-scikitlearn-plain"></i>
+
+            <span class="skill-name">scikit-learn</span>
+          </div>
+          <div class="skill-icon">
+            <i class="devicon-matplotlib-plain"></i>
+
+            <span class="skill-name">Matplotlib</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="container">
+        <h2 class="mb-5 text-center">Featured Projects</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-8 mb-3">
+            <div class="project-card shadow">
+              <div class="project-image">
+                <img
+                  src="https://via.placeholder.com/800x500"
+                  alt="Project Screenshot"
+                />
+                <div class="image-overlay"></div>
+              </div>
+              <div class="project-content">
+                <h3>Researcher.ai</h3>
+                <div class="project-tech">
+                  <i class="devicon-python-plain tech-icon"></i>
+                  <i class="devicon-pytorch-plain tech-icon"></i>
+                  <i class="devicon-flask-original tech-icon"></i>
+                  <i class="devicon-react-original tech-icon"></i>
+                </div>
+                <p class="text-muted">
+                  AI-powered research assistant leveraging NLP techniques to
+                  analyze academic papers and generate insightful summaries.
+                  Features include paper recommendation system, automatic
+                  citation generation, and research trend analysis.
+                </p>
+                <div class="project-links">
+                  <a href="#" class="btn btn-primary">
+                    <i class="fab fa-github"></i> Source Code
+                  </a>
+                  <a href="#" class="btn btn-outline-secondary">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="project-card shadow">
+              <div class="project-image">
+                <img
+                  src="https://via.placeholder.com/800x500"
+                  alt="Project Screenshot"
+                />
+                <div class="image-overlay"></div>
+              </div>
+              <div class="project-content">
+                <h3>Researcher.ai</h3>
+                <div class="project-tech">
+                  <i class="devicon-python-plain tech-icon"></i>
+                  <i class="devicon-pytorch-plain tech-icon"></i>
+                  <i class="devicon-flask-original tech-icon"></i>
+                  <i class="devicon-react-original tech-icon"></i>
+                </div>
+                <p class="text-muted">
+                  AI-powered research assistant leveraging NLP techniques to
+                  analyze academic papers and generate insightful summaries.
+                  Features include paper recommendation system, automatic
+                  citation generation, and research trend analysis.
+                </p>
+                <div class="project-links">
+                  <a href="#" class="btn btn-primary">
+                    <i class="fab fa-github"></i> Source Code
+                  </a>
+                  <a href="#" class="btn btn-outline-secondary">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- publication section -->
+
+    <!-- Publications Section -->
+    <section id="publications">
+      <div class="container">
+        <h2 class="mb-5 text-center">Publications</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="publication-card shadow">
+              <div class="publication-content">
+                <h3>Secure AI Systems: Challenges and Solutions</h3>
+                <p class="text-muted">
+                  Published in IEEE Transactions on Artificial Intelligence,
+                  2023. This paper explores the vulnerabilities in AI systems
+                  and proposes robust solutions to enhance security.
+                </p>
+                <div class="publication-links">
+                  <a href="#" class="btn btn-primary">
+                    <i class="fas fa-file-pdf"></i> PDF
+                  </a>
+                  <a href="#" class="btn btn-outline-secondary">
+                    <i class="fas fa-external-link-alt"></i> View Online
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="publication-card shadow">
+              <div class="publication-content">
+                <h3>AI-Driven Cybersecurity: A New Paradigm</h3>
+                <p class="text-muted">
+                  Published in Journal of Cybersecurity and Privacy, 2022. This
+                  research introduces AI-driven approaches to detect and
+                  mitigate cyber threats in real-time.
+                </p>
+                <div class="publication-links">
+                  <a href="#" class="btn btn-primary">
+                    <i class="fas fa-file-pdf"></i> PDF
+                  </a>
+                  <a href="#" class="btn btn-outline-secondary">
+                    <i class="fas fa-external-link-alt"></i> View Online
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="mb-5 text-center">Connect With Me</h2>
+        <div class="social-container">
+          <a href="#" class="social-icon">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-google"></i>
+          </a>
+        </div>
+        <div class="text-center">
+          <button
+            class="btn btn-primary btn-lg"
+            onclick="window.open('https://forms.gle/your-form-id')"
+          >
+            <i class="fas fa-comment-dots"></i> Contact Form
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+      <div class="container text-center">
+        <p>&copy; 2024 FASLU RAHMAN Portfolio.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Theme Toggle Script -->
+    <script src="scripts.js"></script>
+
+    <!-- GSAP Animations -->
+    <script src="gscript.js"></script>
+  </body>
+</html>
