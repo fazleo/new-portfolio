@@ -30,6 +30,10 @@ section {
   scroll-snap-align: start;
 }
 
+section#contact {
+  min-height: 0;
+}
+
 /* Navigation */
 .navbar {
   border-bottom: 3px solid var(--accent-color);
@@ -641,12 +645,41 @@ i[class^="devicon-"] {
   color: var(--text-color); /* Ensure button text is visible */
 }
 
-/* Dark Mode Fixes for Publications */
-[data-theme="dark"] .publication-card {
-  border-color: rgba(255, 255, 255, 0.15);
+/* Publications Section - Dark Mode */
+[data-theme="dark"] #publications {
+  background-color: var(--bg-color); /* Use dark mode background */
 }
 
-[data-theme="dark"] .publication-content h3,
+[data-theme="dark"] .publication-card {
+  background-color: var(--bg-color); /* Dark mode card background */
+  border-color: rgba(255, 255, 255, 0.15); /* Lighten border for dark mode */
+}
+
+[data-theme="dark"] .publication-content h3 {
+  color: var(--text-color); /* Ensure heading color adapts */
+}
+
 [data-theme="dark"] .publication-content p {
-  color: var(--text-color);
+  color: var(--text-color); /* Ensure paragraph color adapts */
+  opacity: 0.9; /* Slightly reduce opacity for better readability */
+}
+
+[data-theme="dark"] .publication-links .btn {
+  color: var(--text-color); /* Ensure button text color adapts */
+}
+
+[data-theme="dark"] .publication-links .btn-primary {
+  background-color: var(--accent-color); /* Use dark mode accent color */
+  border-color: var(--accent-color); /* Match border to background */
+}
+
+[data-theme="dark"] .publication-links .btn-outline-secondary {
+  border-color: var(--text-color); /* Use text color for border */
+  color: var(--text-color); /* Use text color for button text */
+}
+
+[data-theme="dark"] .publication-links .btn-outline-secondary:hover {
+  background-color: var(--accent-color); /* Change background on hover */
+  border-color: var(--accent-color); /* Match border to background */
+  color: var(--bg-color); /* Use background color for text on hover */
 }
